@@ -6,6 +6,7 @@ import BgImage from "../assets/top-view-table-full-delicious-food-composition.jp
 import MealPlanService from "../services/MealPlanService";
 import { getDownloadURL, getStorage, ref, uploadBytes } from "firebase/storage";
 import { app } from "../config/Config";
+import { NavBar } from "../components/NavBar";
 
 const MealPlanPage = () => {
   const [mealPlan, setMealPlan] = useState({
@@ -81,10 +82,12 @@ const MealPlanPage = () => {
         backgroundColor: "rgba(0, 0, 0, 0.5)", // Change opacity here (0.5 for 50% opacity)
       }}
     >
+      <NavBar />
+      
       <div className="flex  ">
         <SideBar />
 
-        <div className="border shadow-xl p-8 m-auto  w-[800px] rounded-3xl  mt-24 mr-[400px] bg-gray-300">
+        <div className="border shadow-xl p-8 m-auto  w-[800px] rounded-3xl  mt-24 mr-[250px] bg-gray-300">
           <h2 className="text-center text-2xl font-bold mb-4">
             Create Meal Plan
           </h2>
@@ -176,7 +179,7 @@ const MealPlanPage = () => {
               )}
             </div>
             <div className=" flex flex-col gap-y-4 text-white text-lg font-semibold">
-              <button type="submit" className=" bg-green-600 p-3 rounded-xl">
+              <button type="submit" className=" bg-blue-600 p-3 rounded-xl">
                 Create
               </button>
               <button

@@ -3,6 +3,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import WorkOutPlan from "../services/WorkOutPlan";
 import BgImage from "../assets/top-view-table-full-delicious-food-composition.jpg";
 import { SideBar } from "./SideBar";
+import { NavBar } from "../components/NavBar";
 
 const EditWorkOutPlan = () => {
   const { id } = useParams();
@@ -79,6 +80,8 @@ const EditWorkOutPlan = () => {
           backgroundColor: "rgba(0, 0, 0, 0.5)",
         }}
       >
+
+        <NavBar />
         <div className="flex">
           <SideBar />
 
