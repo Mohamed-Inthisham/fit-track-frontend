@@ -46,7 +46,7 @@ const DisplayStatus = ({ loggedIn }) => {
   };
 
   return (
-    <div className="container mx-auto px-4 py-8 font-serif">
+    <div className="container ml-40 mx-auto px-4 py-8 font-serif">
       {loading ? (
         <p className="text-center text-lg font-semibold">
           Loading meal plans...

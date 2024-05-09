@@ -55,7 +55,7 @@ const MealPlanDisplay = ({ loggedIn }) => {
           {posts.map((mealPlan, index) => (
             <div
               key={mealPlan.id}
-              className="bg-gray-300 shadow-lg rounded-lg overflow-hidden mb-8 relative w-[1000px] ml-40 p-5"
+              className="bg-gray-300 shadow-lg rounded-lg overflow-hidden mb-8 relative w-[1000px] ml-80 p-5"
             >
               {mealPlan.user.firstName} {mealPlan.user.lastName}
               <div className="flex flex-row">
