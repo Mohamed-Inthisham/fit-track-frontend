@@ -4,6 +4,7 @@ import UploadedPosts from "./UploadedPosts";
 import UserService from "../services/UserService";
 import MealPlanDisplay from "./MealPlanDisplay";
 import { useNavigate } from "react-router-dom";
+import DisplayStatus from "./DisplayStatus";
 
 const Profile = () => {
   const [user, setUser] = useState({
@@ -76,27 +77,27 @@ const Profile = () => {
   return (
     <div className="bg-gray-200 min-h-screen flex">
       <NavBar />
-      <div className="bg-white rounded-lg shadow-md mt-[70px] w-1/4">
-        <div className="flex items-center bg-slate-500 text-white h-[300px] m-auto justify-center flex-col">
+      <div className="bg-white rounded-lg shadow-md mt-[70px] w-96 ">
+        <div className="flex items-center bg-slate-500 text-white h-[300px] m-auto pl-16 pr-16 justify-center flex-col">
           <img
             src={user.profilePictureUrl}
             alt="Profile"
             className="w-24 h-24 rounded-full mr-4"
           />
           <div>
-            <p className="text-3xl font-semibold">{`${user.firstName} ${user.lastName}`}</p>
-            <p className="text-white text-2xl">{loggedIn.email}</p>
+            <p className="text-2xl ml-4 font-semibold">{`${user.firstName} ${user.lastName}`}</p>
+            <p className="text-white text-1xl">{loggedIn.email}</p>
           </div>
         </div>
         <div className="flex justify-between font-bold p-4">
-          <div className="w-1/2 p-4 bg-blue-500 text-xl text-white rounded-l">
+          <div className="w-1/2 p-4 bg-blue-500 text-l text-white rounded-l">
             Followers: {user.followersCount}
           </div>
-          <div className="w-1/2 p-4 bg-green-400 text-xl text-white rounded-r">
+          <div className="w-1/2 p-4 bg-green-400 text-l text-white rounded-r">
             Following: {user.followingCount}
           </div>
         </div>
-        <form onSubmit={handleSubmit} className="p-8">
+        <form onSubmit={handleSubmit} className="p-2">
           <div className="mb-4">
             <label
               htmlFor="firstName"
@@ -197,7 +198,7 @@ const Profile = () => {
             <button
               type="button"
               onClick={handleEdit}
-              className="bg-blue-500 text-white py-2 px-4 rounded"
+              className="bg-blue-500 ml-36 text-white py-2 px-4 rounded"
             >
               Edit
             </button>
@@ -207,6 +208,7 @@ const Profile = () => {
       <div className="flex m-auto flex-col">
         <UploadedPosts loggedIn={loggedIn} />
         <MealPlanDisplay loggedIn={loggedIn} />
+        <DisplayStatus loggedIn={loggedIn} />
       </div>
     </div>
   );

@@ -77,10 +77,10 @@ const UploadedPosts = ({ loggedIn }) => {
     <div>
       {posts?.map((post, index) => (
         <div
-          className=" mb-10 mt-24 text-black rounded-xl bg-background space-y-10"
+          className=" mb-10 mt-24 -ml-2 text-black rounded-xl bg-background space-y-10"
           key={index}
         >
-          <div className="w-full sm:max-w-[1000px] p-4 space-y-5 bg-gray-300 rounded-md m-auto">
+          <div className="w-full sm:max-w-[800px] p-4 space-y-5 bg-gray-300 rounded-md m-auto">
             <div className="flex flex-col sm:flex-row items-center juc space-y-3 sm:space-y-0 sm:space-x-3">
               <img
                 className="h-10 w-10 rounded-full"
