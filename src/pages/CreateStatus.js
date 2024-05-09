@@ -10,6 +10,8 @@ const CreateStatus = () => {
   const [templates, setTemplates] = useState([]);
   const [statusData, setStatusData] = useState({});
 
+  const [showSuccessMessage, setShowSuccessMessage] = useState(false);
+
   const openPopup = () => {
     setIsPopupOpen(true);
     // Add logic here to handle opening the popup form
@@ -122,6 +124,8 @@ const CreateStatus = () => {
         description: "",
         workoutLocation: "",
       });
+      setShowSuccessMessage(true); 
+      setTimeout(() => setShowSuccessMessage(false), 3000);
     } catch (error) {
       console.error("Error:", error);
     }
@@ -140,13 +144,19 @@ const CreateStatus = () => {
   };
   return (
     <div
-      className="flex h-full  bg-cover bg-no-repeat"
-      style={{ backgroundImage: `url(${BckImage})` }}
-    >
+    className="bg-cover bg-center max-h-max h-screen"
+    style={{
+      backgroundImage: `url(${BckImage})`,
+      backgroundColor: "rgba(0, 0, 0, 0.5)", // Change opacity here (0.5 for 50% opacity)
+      width:"100%",
+      maxHeight:"1400px"
+    }}
+  >
+    <div className="flex  ">
       <NavBar />
       <SideBar />
-      <div className="ml-[500px] mt-20">
-        <div className="bg-white grid grid-cols-3 gap-4 p-5">
+      <div className="mborder shadow-xl p-9 m-auto  w-[780px]  rounded-3xl  mt-24 mr-[400px] bg-gray-300">
+        <div className="bg-white grid grid-cols-3  gap-4 p-5">
           {templates.map((temp, index) => (
             <button
               className="bg-blue-500 text-white px-4 py-2 rounded"
@@ -158,14 +168,16 @@ const CreateStatus = () => {
           ))}
         </div>
 
-        <div className=" bg-white p-5">
+        <div className=" bg-white p-4">
           <button
-            className="bg-green-500 text-white w-[200px] h-[50px] px-4 py-2 rounded col-span-3"
+            className="bg-red-500 text-white w-[200px] h-[50px] px-4 py-2 rounded col-span-3"
             onClick={openPopup}
           >
             Create Template
           </button>
-          <form className="p-5 space-y-5  flex flex-col ">
+          {showSuccessMessage && <div className="text-green-500 text-center mt-2">Successfully added!</div>}
+
+          <form className="p-5 space-y-0  flex flex-col ">
             <div className="">
               <label>Name:</label>
               <input
@@ -241,11 +253,11 @@ const CreateStatus = () => {
           </form>
           <div className="flex justify-end">
             <button
-              className="bg-green-500 text-white px-4 py-2 rounded"
+              className="bg-red-500 text-white px-4 py-2 rounded"
               type="submit"
               onClick={handleSubmitStatus}
             >
-              Submit
+              Create
             </button>
             <button
               className="bg-blue-500 text-white px-4 py-2 rounded ml-2"
@@ -257,11 +269,24 @@ const CreateStatus = () => {
         </div>
       </div>
       {isPopupOpen && (
-        <div className="fixed inset-0 flex items-center justify-center bg-gray-900 bg-opacity-50">
-          {/* Popup form content goes here */}
-          <div className="bg-white p-8 rounded-md overflow-y-auto max-h-[80vh]">
+        <div className="fixed inset-0 flex items-center justify-center bg-gray-900 bg-opacity-50 mx-auto"
+        style={{
+          
+          paddingTop: '75px', 
+          paddingLeft: '300px' 
+          
+        }}>
+          
+          <div className="bg-white p-8 rounded-md overflow-y-auto max-h-[80vh]"
+          style={{
+          
+            width: '500px',
+            height:'900px' 
+           
+            
+          }}>
             <h2 className="text-2xl font-bold mb-4">Create Template</h2>
-            {/* Add your form fields and logic here */}
+            
             <form onSubmit={handleSubmit} className=" p-5 space-y-8 ">
               <div className=" ">
                 <label>Name:</label>
@@ -334,10 +359,10 @@ const CreateStatus = () => {
               </div>
               <div className="flex justify-end">
                 <button
-                  className="bg-green-500 text-white px-4 py-2 rounded"
+                  className="bg-red-500 text-white px-4 py-2 rounded"
                   type="submit"
                 >
-                  Submit
+                  Create
                 </button>
                 <button
                   className="bg-blue-500 text-white px-4 py-2 rounded ml-2"
@@ -350,6 +375,7 @@ const CreateStatus = () => {
           </div>
         </div>
       )}
+      </div>
     </div>
   );
 };
