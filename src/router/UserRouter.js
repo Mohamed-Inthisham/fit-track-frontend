@@ -23,6 +23,7 @@ import MealPlanDisplay from "../pages/MealPlanDisplay";
 import MealPlanEdit from "../pages/EditMealPlan";
 import StatusEdit from "../pages/EditStatus";
 import EditWorkOutPlan from "../pages/EditWorkOutPlan";
+import Workout from "../pages/Workout"
 
 const UserRouter = () => {
   return (
@@ -51,6 +52,7 @@ const UserRouter = () => {
           <Route path="/mealplan/:id" element={<MealPlanEdit />} />
           <Route path="/status/:id" element={<StatusEdit />} />
           <Route path="/workoutplan/:id" element={<EditWorkOutPlan />} />
+          <Route path="/workout" element={<Workout />} />
         </Routes>
       </BrowserRouter>
     </>

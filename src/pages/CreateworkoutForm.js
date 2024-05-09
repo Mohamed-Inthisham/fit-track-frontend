@@ -2,8 +2,9 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { SideBar } from "./SideBar";
 
-import BgImage from "../assets/top-view-table-full-delicious-food-composition.jpg";
+import BgImage from "../assets/workout000.jpg";
 import WorkOutPlan from "../services/WorkOutPlan";
+import { NavBar } from "../components/NavBar";
 
 const WorkoutPlanPage = () => {
   const [workoutPlan, setWorkoutPlan] = useState({
@@ -58,10 +59,15 @@ const WorkoutPlanPage = () => {
         backgroundColor: "rgba(0, 0, 0, 0.5)",
       }}
     >
+
+      <NavBar />
       <div className="flex">
         <SideBar />
 
-        <div className="border shadow-xl p-8 m-auto w-[800px] rounded-3xl mt-24 mr-[400px] bg-gray-300">
+        <div
+          className="border shadow-xl p-8 m-auto w-[800px] rounded-3xl mt-24 mr-[250px]"
+          style={{ background: 'rgba(209, 213, 219, 0.7)' }} // Changed to use RGBA for semi-transparent background
+        >
           <h2 className="text-center text-2xl font-bold mb-4">
             Create Workout Plan
           </h2>
@@ -127,7 +133,7 @@ const WorkoutPlanPage = () => {
             <div className="flex flex-col gap-y-4 text-white text-lg font-semibold">
               <button
                 type="submit"
-                className="bg-green-600 p-3 rounded-xl"
+                className="bg-blue-600 p-3 rounded-xl"
                 onClick={handleSubmit}
               >
                 Create

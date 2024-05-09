@@ -6,6 +6,7 @@ import Front from "../assets/man-holding-heavy-chain-hands.jpg";
 import Arms from "../assets/5209.jpg";
 import Legs from "../assets/legs.jpg";
 import { Link } from "react-router-dom";
+import { NavBar } from "../components/NavBar";
 
 const CreateWorkouPlan = () => {
   return (
@@ -16,6 +17,8 @@ const CreateWorkouPlan = () => {
         backgroundColor: "rgba(0, 0, 0, 0.5)", // Change opacity here (0.5 for 50% opacity)
       }}
     >
+
+      <NavBar />
       <div className="flex">
         <SideBar />
 

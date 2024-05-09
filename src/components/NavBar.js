@@ -27,8 +27,8 @@ export function NavBar({ user }) {
         color="black"
         className="p-1 font-normal"
       >
-        <Link to={"/allUsers"} className="flex items-center">
-          Peoples
+        <Link to={"/allUsers"} className="flex items-center text-white">
+          Find Friends
         </Link>
       </Typography>
       <Typography
@@ -37,7 +37,7 @@ export function NavBar({ user }) {
         color="blue-gray"
         className="p-1 font-normal"
       >
-        <button className="flex items-center" onClick={handleLogOut}>
+        <button className="flex items-center text-white" onClick={handleLogOut} >
           LogOut
         </button>
       </Typography>
@@ -46,17 +46,17 @@ export function NavBar({ user }) {
 
   return (
     <div className=" top-0 z-50 fixed max-h-full w-full">
-      <Navbar className="sticky top-0 z-10 h-max max-w-full rounded-none px-4 py-2 lg:px-8 lg:py-4">
-        <div className="flex items-center justify-between text-black">
+      <Navbar className="sticky top-0 z-10 h-max max-w-full rounded-none px-4 py-2 lg:px-8 lg:py-4 bg-[#B80000]">
+        <div className="flex items-center justify-between text-white">
           <Link to="/home">
-            <Typography className="mr-4 cursor-pointer py-1.5 font-medium text-xl bebas-neue-regular">
+            <Typography className="mr-4 cursor-pointer py-1.5 font-medium text-xl bebas-hi-neue-regular">
               Fit Track
             </Typography>
           </Link>
-          <div className="flex items-center gap-4 text-black">
+          <div className="flex items-center gap-4 text-white">
             <div className="mr-4 hidden lg:block">{navList}</div>
             <div className="flex items-center gap-x-1 ">
-              Hello! {loggedIn.username}
+              {loggedIn.username}
               {loggedIn.provider === "google" ? (
                 <img
                   className=" w-[40px] h-[40px] rounded-full "
