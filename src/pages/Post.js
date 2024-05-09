@@ -108,10 +108,10 @@ const Post = () => {
     <div>
       {posts?.map((post, index) => (
         <div
-          className="mt-5 ml-44 w-[1000px] text-black rounded-xl bg-background space-y-10"
+          className="mt-5 ml-72 w-[800px] text-black rounded-xl bg-background space-y-10"
           key={index}
         >
-          <div className="w-full sm:max-w-[1200px] p-4 space-y-5 bg-gray-300 rounded-md m-auto">
+          <div className="w-full sm:max-w-[800px] p-4 space-y-1 bg-gray-100 rounded-md m-auto">
             <div className="flex flex-col sm:flex-row items-center juc space-y-3 sm:space-y-0 sm:space-x-3">
               <img
                 className="h-10 w-10 rounded-full"
@@ -138,7 +138,7 @@ const Post = () => {
               </Slider>
             ) : post.mediaList && post.mediaList.length === 1 ? (
               <img
-                className="p-2 w-full h-[600px] m-auto"
+                className="p-2 w-full h-[400px] m-auto"
                 src={post.mediaList[0]}
                 alt="Gym"
               />
