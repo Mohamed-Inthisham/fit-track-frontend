@@ -31,16 +31,7 @@ export function NavBar({ user }) {
           Find Friends
         </Link>
       </Typography>
-      <Typography
-        as="li"
-        variant="small"
-        color="blue-gray"
-        className="p-1 font-normal"
-      >
-        <button className="flex items-center text-white" onClick={handleLogOut} >
-          LogOut
-        </button>
-      </Typography>
+      
     </ul>
   );
 
@@ -68,6 +59,16 @@ export function NavBar({ user }) {
                   src={loggedIn.profilePictureUrl}
                 />
               )}
+              <Typography
+        as="li"
+        variant="small"
+        color="blue-gray"
+        className="p-1 font-normal"
+      >
+        <button className="flex items-center text-white ml-5" onClick={handleLogOut} >
+          LogOut
+        </button>
+      </Typography>
             </div>
           </div>
         </div>
