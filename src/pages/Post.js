@@ -108,7 +108,7 @@ const Post = () => {
     <div>
       {posts?.map((post, index) => (
         <div
-          className="mt-5 ml-72 w-[800px] text-black rounded-xl bg-background space-y-10"
+          className="mt-5 mb-16 ml-100 w-[800px] text-black rounded-xl bg-background space-y-10"
           key={index}
         >
           <div className="w-full sm:max-w-[800px] p-4 space-y-1 bg-gray-100 rounded-md m-auto">
