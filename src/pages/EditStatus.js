@@ -82,7 +82,7 @@ const StatusEdit = () => {
     >
       <NavBar />
       <SideBar />
-      <div className="ml-[500px] mt-20">
+      <div className="mborder shadow-xl p-9 m-auto  w-[800px] rounded-3xl  mt-24 mr-[400px] bg-gray-300">
         <div className=" bg-white p-5">
           <form className="p-5 space-y-5  flex flex-col ">
             <div className="">
@@ -160,14 +160,14 @@ const StatusEdit = () => {
           </form>
           <div className="flex justify-end">
             <button
-              className="bg-green-500 text-white px-4 py-2 rounded"
+              className="bg-red-500 text-white px-4 py-2 rounded"
               type="submit"
               onClick={handleSubmit}
             >
               Submit
             </button>
             <button
-              className="bg-red-500 text-white px-4 py-2 rounded ml-2"
+              className="bg-blue-500 text-white px-4 py-2 rounded ml-2"
               onClick={(e) => handleDelete(e)}
             >
               Delete
