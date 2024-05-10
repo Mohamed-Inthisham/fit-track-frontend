@@ -51,16 +51,22 @@ const Home = () => {
     fetchData();
   }, []);
   return (
-    <div className=" mt-[70px] bg-gray-400 flex">
+    <div className=" mt-[70px] bg-gradient-to-r from-red-300 to-red-700 flex">
       <SideBar />
       <NavBar user={user} />
       <div className=" m-auto ">
         <Post />
-        <span className=" text-2xl ml-44 ">Meal Plan</span>
+        <span class="text-2xl ml-72 font-bold tracking-wider text-white bg-gradient-to-r from-red-500 to-pink-700 p-2 rounded-lg shadow-lg hover:bg-red-700 hover:text-gray-100 hover:shadow-xl transform hover:scale-105 duration-200">
+          Meal Plan
+        </span>
         <MealPlanDisplay loggedIn={user} />
-        <span className="text-2xl ml-44">Status</span>
+        <span class="text-2xl ml-72 font-bold tracking-wider text-white bg-gradient-to-r from-red-500 to-pink-700 p-2 rounded-lg shadow-lg hover:bg-red-700 hover:text-gray-100 hover:shadow-xl transform hover:scale-105 duration-200">
+          Status
+        </span>
         <DisplayStatus loggedIn={user} />
-        <span className="text-2xl ml-44">Workout Plan</span>
+        <span class="text-2xl ml-72 font-bold tracking-wider text-white bg-gradient-to-r from-red-500 to-pink-700 p-2 rounded-lg shadow-lg hover:bg-red-700 hover:text-gray-100 hover:shadow-xl transform hover:scale-105 duration-200">
+          Workout Plan
+        </span>
         <DisplayWorkoutPlan loggedIn={user} />
       </div>
     </div>
