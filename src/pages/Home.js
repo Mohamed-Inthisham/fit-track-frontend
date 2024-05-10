@@ -51,16 +51,13 @@ const Home = () => {
     fetchData();
   }, []);
   return (
-    <div className=" mt-[70px] bg-gray-400 flex">
+    <div className=" mt-[70px] bg-gradient-to-r from-red-300 to-red-700 flex">
       <SideBar />
       <NavBar user={user} />
       <div className=" m-auto ">
         <Post />
-        <span className=" text-2xl ml-44 ">Meal Plan</span>
         <MealPlanDisplay loggedIn={user} />
-        <span className="text-2xl ml-44">Status</span>
         <DisplayStatus loggedIn={user} />
-        <span className="text-2xl ml-44">Workout Plan</span>
         <DisplayWorkoutPlan loggedIn={user} />
       </div>
     </div>

@@ -122,17 +122,17 @@ const Register = () => {
                             className="block w-full px-3 py-2 rounded-md border border-gray-300 focus:outline-none focus:border-blue-500"
                         />
                         <input
-                            type="password"
-                            name="password"
-                            onChange={handleChange}
-                            placeholder="Password"
-                            className="block w-full px-3 py-2 rounded-md border border-gray-300 focus:outline-none focus:border-blue-500"
-                        />
-                        <input
                             type="text"
                             name="email"
                             onChange={handleChange}
                             placeholder="Email"
+                            className="block w-full px-3 py-2 rounded-md border border-gray-300 focus:outline-none focus:border-blue-500"
+                        />
+                         <input
+                            type="password"
+                            name="password"
+                            onChange={handleChange}
+                            placeholder="Password"
                             className="block w-full px-3 py-2 rounded-md border border-gray-300 focus:outline-none focus:border-blue-500"
                         />
                         <input
