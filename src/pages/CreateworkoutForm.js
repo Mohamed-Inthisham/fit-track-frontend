@@ -41,6 +41,7 @@ const WorkoutPlanPage = () => {
         workoutPlan
       );
       console.log(response);
+      alert("Workout Plan Added Successfully")
       navigate("/home");
     } catch (error) {
       console.error(error);
