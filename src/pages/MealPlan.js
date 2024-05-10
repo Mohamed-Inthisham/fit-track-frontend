@@ -63,6 +63,7 @@ const MealPlanPage = () => {
         user.id,
         mealPlanData
       );
+      alert("Meal Plan added SuccessFully")
       console.log(response);
       navigate("/home");
     } catch (error) {
@@ -78,7 +79,7 @@ const MealPlanPage = () => {
     <div
       className="bg-cover bg-center h-screen "
       style={{
-        // backgroundImage: `url(${BgImage})`,
+        backgroundImage: `url(${BgImage})`,
         backgroundColor: "rgba(0, 0, 0, 0.5)", // Change opacity here (0.5 for 50% opacity)
       }}
     >
