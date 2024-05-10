@@ -64,6 +64,7 @@ const CreatePost = () => {
 
     PostService.savePost(postData, loggedIn.id)
       .then((response) => {
+        alert("Post Successfully Added")
         console.log(response);
         navigate("/home");
       })

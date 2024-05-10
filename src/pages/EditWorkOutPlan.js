@@ -41,6 +41,7 @@ const EditWorkOutPlan = () => {
 
       const response = await WorkOutPlan.updateWorkOutPlan(id, workoutData);
       console.log(response);
+      alert("Edited Successfully")
       navigate("/home");
     } catch (error) {
       console.error(error);
