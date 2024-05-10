@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { SideBar } from "./SideBar";
-import { Input } from "@material-tailwind/react";
-import UserServise from "../services/UserService";
+import UserService from "../services/UserService";
 import { NavBar } from "../components/NavBar";
 import { useNavigate } from "react-router-dom";
 
@@ -10,14 +9,14 @@ const AllUsers = () => {
   const [loading, setLoading] = useState(true);
   const [user, setUser] = useState({});
   const [followStatus, setFollowStatus] = useState({});
-const navigate = useNavigate();
+  const navigate = useNavigate();
+
   useEffect(() => {
     const fetchData = async () => {
       setLoading(true);
       try {
-        const response = await UserServise.getUser();
+        const response = await UserService.getUser();
         setUsers(response.data);
-        // Initialize follow status based on current user's followed users
         const followedUsers = response.data.reduce((acc, u) => {
           acc[u.userId] = user.following.includes(u.userId);
           return acc;
@@ -29,21 +28,19 @@ const navigate = useNavigate();
       setLoading(false);
     };
     fetchData();
-  }, [user]); // Refetch data when user changes
+  }, [user]);
 
   useEffect(() => {
-    const user = localStorage.getItem("user");
-    setUser(JSON.parse(user));
+    const storedUser = localStorage.getItem("user");
+    setUser(JSON.parse(storedUser));
   }, []);
-console.log("user",user)
-  const handleFollowClick = async (userId) => {
-    try {
-      // Toggle follow status
-      const updatedFollowStatus = { ...followStatus };
-      updatedFollowStatus[userId] = !updatedFollowStatus[userId];
-      setFollowStatus(updatedFollowStatus);
 
-      const response = await UserServise.followUsers(user.id, userId);
+  const handleFollowClick = async (userId) => {
+    const updatedFollowStatus = { ...followStatus };
+    updatedFollowStatus[userId] = !updatedFollowStatus[userId];
+    setFollowStatus(updatedFollowStatus);
+    try {
+      const response = await UserService.followUsers(user.id, userId);
       console.log(response);
     } catch (error) {
       console.error(error);
@@ -52,39 +49,45 @@ console.log("user",user)
 
   const viewUser = (e, id) => {
     e.preventDefault();
-    
     navigate(`/friend/${id}`);
   };
 
-  return (
-    <div className="flex flex-col " key={user.userId}>
-      <NavBar />
+  if (loading) return <p>Loading...</p>; // Display a loading message if data is still fetching
 
-      <div className="flex flex-1 ">
+  return (
+    <div className="flex flex-col min-h-screen">
+      <NavBar />
+      <div className="flex flex-1">
         <SideBar />
-        <div className="flex-1 overflow-y-auto mt-40 ">
-          <div className="grid grid-cols-4  p-4 ml-[300px] ">
-            {users?.map((u, index) =>
-              u.userId !== user.id ? (
-                <div className="p-3 m-auto space-y-4 cursor-pointer" key={index} onClick={(e, id )=> viewUser(e, u.userId)}>
-                  <div className=" p-4 w-[200px] h-[200px]">
+        <div className="flex-1 flex justify-center items-center p-4">
+          <div className="w-full max-w-4xl">
+            <ul className="space-y-4">
+              {users?.map((u, index) => (
+                u.userId !== user.id && (
+                  <li
+                    key={u.userId}
+                    className="flex items-center space-x-4 p-4 bg-white shadow-lg rounded-lg cursor-pointer"
+                    onClick={(e) => viewUser(e, u.userId)}
+                  >
                     <img
                       src={u.profilePictureUrl}
                       alt={`${u.firstName} profile`}
-                      className="w-full h-full object-cover rounded-full"
+                      className="w-16 h-16 rounded-full object-cover"
                     />
-                   
-               
-                  </div>
-                  <button
-                    onClick={() => handleFollowClick(u.userId)}
-                    className="bg-blue-600 rounded-lg w-full"
-                  >
-                    {followStatus[u.userId] ? "Unfollow" : "Follow"}
-                  </button>
-                </div>
-              ) : null
-            )}
+                    <div className="flex-1 min-w-0">
+                      <p className="text-lg font-semibold text-gray-900 truncate">{`${u.firstName} ${u.lastName}`}</p>
+                      <p className="text-sm text-gray-500 truncate">{u.email}</p>
+                    </div>
+                    <button
+                      onClick={() => handleFollowClick(u.userId)}
+                      className={`px-4 py-2 rounded text-white ${followStatus[u.userId] ? 'bg-red-600' : 'bg-blue-600'}`}
+                    >
+                      {followStatus[u.userId] ? "Unfollow" : "Follow"}
+                    </button>
+                  </li>
+                )
+              ))}
+            </ul>
           </div>
         </div>
       </div>
