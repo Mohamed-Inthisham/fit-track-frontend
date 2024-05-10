@@ -14,7 +14,7 @@ class CommentService {
   }
 
   editComment(commentId, editedComment) {
-    return axios.put(BASE_URL + "/" + commentId, editedComment);
+    return axios.put(BASE_URL + "/" + commentId, {commentText: editedComment});
   }
 
   deleteComment(commentId) {
