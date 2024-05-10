@@ -87,7 +87,7 @@ const MealPlanPage = () => {
       <div className="flex  ">
         <SideBar />
 
-        <div className="border shadow-xl p-8 m-auto  w-[800px] rounded-3xl  mt-24 mr-[250px] bg-gray-300">
+        <div className="border shadow-xl p-8 m-auto  w-[800px] rounded-3xl  mt-[95px] mr-[250px] h-[790px] bg-gray-300">
           <h2 className="text-center text-2xl font-bold mb-4">
             Create Meal Plan
           </h2>
