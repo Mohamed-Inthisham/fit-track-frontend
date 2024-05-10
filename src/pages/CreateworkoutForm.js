@@ -65,7 +65,7 @@ const WorkoutPlanPage = () => {
         <SideBar />
 
         <div
-          className="border shadow-xl p-8 m-auto w-[800px] rounded-3xl mt-24 mr-[250px]"
+          className="border shadow-xl p-8 m-auto w-[800px] rounded-3xl mt-[130px] mr-[250px]"
           style={{ background: 'rgba(209, 213, 219, 0.7)' }} // Changed to use RGBA for semi-transparent background
         >
           <h2 className="text-center text-2xl font-bold mb-4">
