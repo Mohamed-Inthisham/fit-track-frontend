@@ -171,13 +171,13 @@ const MealPlanPage = () => {
                 onChange={handleFileChange}
                 className="w-full px-3 mt-2 py-2 rounded-md border border-gray-300 mb-3 focus:outline-none focus:border-blue-500 bg-opacity-10"
               />
-              {previewUrl && (
+              {/* {previewUrl && (
                 <img
                   src={previewUrl}
                   className="  w-[200px] h-[200px] "
                   alt="Selected"
                 />
-              )}
+              )} */}
             </div>
             <div className=" flex flex-col gap-y-4 text-white text-lg font-semibold">
               <button type="submit" className=" bg-blue-600 p-3 rounded-xl">

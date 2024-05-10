@@ -205,7 +205,7 @@ const Profile = () => {
           )}
         </form>
       </div>
-      <div className="flex m-auto flex-col">
+      <div className="flex m-auto flex-col items-center">
         <UploadedPosts loggedIn={loggedIn} />
         <MealPlanDisplay loggedIn={loggedIn} />
         <DisplayStatus loggedIn={loggedIn} />

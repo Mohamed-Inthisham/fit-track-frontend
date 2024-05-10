@@ -112,14 +112,14 @@ export function SideBar() {
             Workout Status
           </ListItem>
         </Link>
-        <Link to="/login">
+        {/* <Link to="/login">
           <ListItem>
             <ListItemPrefix>
               <PowerIcon className="h-5 w-5" />
             </ListItemPrefix>
             Log Out
           </ListItem>
-        </Link>
+        </Link> */}
       </List>
     </Card>
   );

@@ -56,7 +56,7 @@ const DisplayStatus = ({ loggedIn }) => {
           {posts.map((status, index) => (
             <div
               key={status.id}
-              className="bg-gray-300 shadow-lg rounded-lg overflow-hidden mb-8 relative w-[1000px] ml-40 p-5"
+              className="bg-white shadow-lg rounded-lg overflow-hidden mb-8 relative w-[1000px] ml-40 p-5"
             >
               {status.user.firstName} {status.user.lastName}
               <div className="flex flex-row">

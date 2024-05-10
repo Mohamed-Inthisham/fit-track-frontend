@@ -89,6 +89,7 @@ const MealPlanEdit = () => {
     try {
       const response = await MealPlanService.deleteById(id);
       console.log(response);
+      alert("Mealplan deleted successfully");
       navigate("/home");
     } catch (error) {
       console.error(error);
@@ -188,13 +189,13 @@ const MealPlanEdit = () => {
                 onChange={handleFileChange}
                 className="w-full px-3 mt-2 py-2 rounded-md border border-gray-300 mb-3 focus:outline-none focus:border-blue-500 bg-opacity-10"
               />
-              {previewUrl && (
+              {/* {previewUrl && (
                 <img
                   src={previewUrl}
                   className="  w-[200px] h-[200px] "
                   alt="Selected"
                 />
-              )}
+              )} */}
             </div>
             </div>
 
