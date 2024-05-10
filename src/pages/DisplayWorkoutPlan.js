@@ -51,7 +51,7 @@ const DisplayWorkoutPlan = ({ loggedIn }) => {
           {posts.map((status, index) => (
             <div
               key={status.id}
-              className="bg-gray-300 shadow-lg rounded-lg overflow-hidden mb-8 relative w-[1000px] ml-80 p-5"
+              className="bg-white shadow-lg rounded-lg overflow-hidden mb-8 relative w-[1000px] ml-80 p-5"
             >
               {status.user ? (
                 <div className="flex items-center space-x-3 mb-4">

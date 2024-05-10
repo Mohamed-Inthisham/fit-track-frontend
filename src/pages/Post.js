@@ -108,10 +108,10 @@ const Post = () => {
     <div>
       {posts?.map((post, index) => (
         <div
-          className="mt-5 mb-16 ml-100 w-[800px] text-black rounded-xl bg-background space-y-10"
+          className="mt-5 mb-16 ml-100 w-[1000px] text-black rounded-xl bg-background space-y-10"
           key={index}
         >
-          <div className="w-full sm:max-w-[800px] p-4 space-y-1 bg-gray-100 rounded-md m-auto">
+          <div className="w-full sm:max-w-[1000px] p-4 space-y-1 bg-gray-100 rounded-md m-auto">
             <div className="flex flex-col sm:flex-row items-center juc space-y-3 sm:space-y-0 sm:space-x-3">
               <img
                 className="h-10 w-10 rounded-full"

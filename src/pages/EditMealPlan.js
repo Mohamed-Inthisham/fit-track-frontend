@@ -54,6 +54,7 @@ const MealPlanEdit = () => {
         const imageRef = ref(storage, `/images/${selectedFile.name}`);
         await uploadBytes(imageRef, selectedFile);
         imageUrl = await getDownloadURL(imageRef);
+        
       }
 
       const mealPlanData = {
@@ -62,6 +63,7 @@ const MealPlanEdit = () => {
       };
 
       const response = await MealPlanService.updatePlan(id, mealPlanData);
+      alert("Edited Successfully")
       console.log(response);
       navigate("/home");
     } catch (error) {
