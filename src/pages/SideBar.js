@@ -5,21 +5,20 @@ import {
   List,
   ListItem,
   ListItemPrefix,
-  ListItemSuffix,
-  Chip,
   Accordion,
   AccordionHeader,
   AccordionBody,
 } from "@material-tailwind/react";
 import {
-  PresentationChartBarIcon,
-  ShoppingBagIcon,
-  UserCircleIcon,
-  Cog6ToothIcon,
-  InboxIcon,
-  PowerIcon,
-} from "@heroicons/react/24/solid";
-import { ChevronRightIcon, ChevronDownIcon } from "@heroicons/react/24/outline";
+  UserIcon, // More suited for Profile
+  DocumentTextIcon, // Suited for Create Post (generic document icon)
+  VideoCameraIcon, // Already suitable for Upload Video
+  CameraIcon, // Already suitable for Upload Photo
+  CalendarIcon, // Used for Meal Plan and now Workout Plan
+  PresentationChartBarIcon, // Already suitable for Workout Status
+  PowerIcon, // Already suitable for Log Out
+} from "@heroicons/react/24/outline"; // Using outline icons for consistency
+import { ChevronDownIcon } from "@heroicons/react/24/outline";
 import { Link } from "react-router-dom";
 
 export function SideBar() {
@@ -32,17 +31,12 @@ export function SideBar() {
   return (
     <Card className="h-[calc(100vh)] fixed w-full max-w-[20rem] p-4 shadow-xl shadow-blue-gray-900/5">
       <div className="mb-2 p-4">
-        {/* <Link to="/home">
-          <Typography variant="h5" color="blue-gray">
-            Fit Fusion
-          </Typography>
-        </Link> */}
       </div>
-      <List className=" font-semibold">
-      <Link to="/profile">
+      <List className="font-semibold">
+        <Link to="/profile">
           <ListItem>
             <ListItemPrefix>
-              <UserCircleIcon className="h-5 w-5" />
+              <UserIcon className="h-5 w-5" />
             </ListItemPrefix>
             Profile
           </ListItem>
@@ -64,7 +58,7 @@ export function SideBar() {
               className="border-b-0 p-3"
             >
               <ListItemPrefix>
-                <PresentationChartBarIcon className="h-5 w-5" />
+                <DocumentTextIcon className="h-5 w-5" />
               </ListItemPrefix>
               <Typography color="blue-gray" className="mr-auto font-normal">
                 Create Post
@@ -75,35 +69,29 @@ export function SideBar() {
             <AccordionBody className="py-1">
               <List className="p-0">
                 <Link to="/uploadVedio">
-                  <ListItem>Upload Vedio</ListItem>
+                  <ListItem>
+                    <ListItemPrefix>
+                      <VideoCameraIcon className="h-5 w-5" />
+                    </ListItemPrefix>
+                    Upload Video
+                  </ListItem>
                 </Link>
                 <Link to="/uploadPhoto">
-                  <ListItem>Upload Photo</ListItem>
+                  <ListItem>
+                    <ListItemPrefix>
+                      <CameraIcon className="h-5 w-5" />
+                    </ListItemPrefix>
+                    Upload Photo
+                  </ListItem>
                 </Link>
               </List>
             </AccordionBody>
           )}
         </Accordion>
-
-        {/* <ListItem>
-          <ListItemPrefix>
-            <InboxIcon className="h-5 w-5" />
-          </ListItemPrefix>
-          Inbox
-          <ListItemSuffix>
-            <Chip
-              value="14"
-              size="sm"
-              variant="ghost"
-              color="blue-gray"
-              className="rounded-full"
-            />
-          </ListItemSuffix>
-        </ListItem> */}
         <Link to="/mealplan">
           <ListItem>
             <ListItemPrefix>
-              <Cog6ToothIcon className="h-5 w-5" />
+              <CalendarIcon className="h-5 w-5" />
             </ListItemPrefix>
             Meal Plan
           </ListItem>
@@ -111,7 +99,7 @@ export function SideBar() {
         <Link to="/workoutplan">
           <ListItem>
             <ListItemPrefix>
-              <Cog6ToothIcon className="h-5 w-5" />
+              <CalendarIcon className="h-5 w-5" /> {/* Substituted icon */}
             </ListItemPrefix>
             Workout Plan
           </ListItem>
@@ -119,7 +107,7 @@ export function SideBar() {
         <Link to="/status">
           <ListItem>
             <ListItemPrefix>
-              <Cog6ToothIcon className="h-5 w-5" />
+              <PresentationChartBarIcon className="h-5 w-5" />
             </ListItemPrefix>
             Workout Status
           </ListItem>
