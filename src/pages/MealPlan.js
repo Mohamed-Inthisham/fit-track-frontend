@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { SideBar } from "./SideBar";
 
-import BgImage from "../assets/top-view-table-full-delicious-food-composition.jpg";
+import BgImage from "../assets/food6.jpeg";
 import MealPlanService from "../services/MealPlanService";
 import { getDownloadURL, getStorage, ref, uploadBytes } from "firebase/storage";
 import { app } from "../config/Config";
