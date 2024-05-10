@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { NavBar } from "../components/NavBar";
 import { SideBar } from "./SideBar";
-import BckImage from "../assets/young-fitness-man-studio.jpg";
+import BckImage from "../assets/workout_running.jpg";
 import WorkoutService from "../services/WorkoutService";
 
 const CreateStatus = () => {

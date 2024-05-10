@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { NavBar } from "../components/NavBar";
 import { SideBar } from "./SideBar";
-import BckImage from "../assets/young-fitness-man-studio.jpg";
+import BckImage from "../assets/workout_running.jpg";
 import WorkoutService from "../services/WorkoutService";
 import { useNavigate, useParams } from "react-router-dom";
 
@@ -164,7 +164,7 @@ const StatusEdit = () => {
               type="submit"
               onClick={handleSubmit}
             >
-              Submit
+              Save
             </button>
             <button
               className="bg-blue-500 text-white px-4 py-2 rounded ml-2"
