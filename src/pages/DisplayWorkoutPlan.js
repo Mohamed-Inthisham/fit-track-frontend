@@ -30,7 +30,7 @@ const DisplayWorkoutPlan = ({ loggedIn }) => {
     };
     fetchData();
   }, [loggedIn]);
-  console.log("plan", posts);
+ 
   
 
   const navigate = useNavigate();
@@ -44,7 +44,7 @@ const DisplayWorkoutPlan = ({ loggedIn }) => {
     <div className="container mx-auto px-4 py-8 font-serif">
       {loading ? (
         <p className="text-center text-lg font-semibold">
-          Loading meal plans...
+          Loading workout plans...
         </p>
       ) : (
         <div>
@@ -53,37 +53,46 @@ const DisplayWorkoutPlan = ({ loggedIn }) => {
               key={status.id}
               className="bg-gray-300 shadow-lg rounded-lg overflow-hidden mb-8 relative w-[1000px] ml-80 p-5"
             >
-              {status.user.firstName} {status.user.lastName}
-              <div className="flex flex-row">
-                <img
-                  className="w-1/2 h-full object-cover object-center"
-                  src={status.user.profilePictureUrl}
-                  alt="Meal Plan"
-                />
-
-                <div className="p-6 space-y-8">
-                  <h2 className="text-xl font-bold mb-2">
-                    {status.workoutType}
-                  </h2>
-                  <p className="text-gray-700 mb-4">
-                    <span className="font-semibold">Excercies Name : </span>{" "}
-                    {status.excerciesName}
-                  </p>
-                  <p className="text-gray-700 mb-4">
-                    <span className="font-semibold">Repitition : </span>{" "}
-                    {status.repitition}
-                  </p>
-                  <p className="text-gray-700 mb-4">
-                    <span className="font-semibold">Duration : </span>{" "}
-                    {status.duration}
-                  </p>
-
-                  <p className="text-gray-700 mb-4">
-                    <span className="font-semibold">Description : </span>{" "}
-                    {status.description}
-                  </p>
+              {status.user ? (
+                <div className="flex items-center space-x-3 mb-4">
+                  <img
+                    className="h-10 w-10 rounded-full"
+                    src={status.user.profilePictureUrl || "default-user-image.png"}
+                    alt={`${status.user.firstName} ${status.user.lastName}`}
+                  />
+                  <span className="font-bold">
+                    {status.user.firstName} {status.user.lastName}
+                  </span>
                 </div>
-              </div>
+              ) : (
+                <p className="text-red-500">User information not available</p>
+              )}
+              <div className="flex flex-row">
+  <div className="p-6 w-full">
+    <h2 className="text-xl font-bold mb-4">
+      Workout Type :     {status.workoutType}
+    </h2>
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+      <div className="bg-gray-200 p-4 rounded-lg shadow flex flex-col overflow-hidden">
+        <span className="font-semibold">Exercise Name:</span>
+        <div className="text-gray-700 mt-1 break-words">{status.excerciesName}</div>
+      </div>
+      <div className="bg-gray-200 p-4 rounded-lg shadow flex flex-col overflow-hidden">
+        <span className="font-semibold">Repetition:</span>
+        <div className="text-gray-700 mt-1 break-words">{status.repitition}</div>
+      </div>
+      <div className="bg-gray-200 p-4 rounded-lg shadow flex flex-col overflow-hidden">
+        <span className="font-semibold">Duration:</span>
+        <div className="text-gray-700 mt-1 break-words">{status.duration}</div>
+      </div>
+      <div className="bg-gray-200 p-4 rounded-lg shadow flex flex-col overflow-hidden">
+        <span className="font-semibold">Description:</span>
+        <div className="text-gray-700 mt-1 break-words">{status.description}</div>
+      </div>
+    </div>
+  </div>
+</div>
+
               <div className="flex items-center justify-between">
                 <div className="flex items-center space-x-4 w-full justify-center">
                   <button
