@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { SideBar } from "./SideBar";
 
-import BgImage from "../assets/food6.jpeg";
+import BgImage from "../assets/meal5.jpg";
 import MealPlanService from "../services/MealPlanService";
 import { getDownloadURL, getStorage, ref, uploadBytes } from "firebase/storage";
 import { app } from "../config/Config";
@@ -63,6 +63,7 @@ const MealPlanPage = () => {
         user.id,
         mealPlanData
       );
+      alert("Meal Plan added SuccessFully")
       console.log(response);
       navigate("/home");
     } catch (error) {
@@ -76,7 +77,7 @@ const MealPlanPage = () => {
 
   return (
     <div
-      className="bg-cover bg-center max-h-max h-screen"
+      className="bg-cover bg-center h-screen "
       style={{
         backgroundImage: `url(${BgImage})`,
         backgroundColor: "rgba(0, 0, 0, 0.5)", // Change opacity here (0.5 for 50% opacity)
