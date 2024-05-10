@@ -88,7 +88,7 @@ const MealPlanPage = () => {
       <div className="flex  ">
         <SideBar />
 
-        <div className="border shadow-xl p-8 m-auto  w-[800px] rounded-3xl  mt-24 mr-[250px] bg-gray-300">
+        <div className="border shadow-xl p-8 m-auto  w-[800px] rounded-3xl  mt-[95px] mr-[250px] h-[790px] bg-gray-300">
           <h2 className="text-center text-2xl font-bold mb-4">
             Create Meal Plan
           </h2>
@@ -171,13 +171,13 @@ const MealPlanPage = () => {
                 onChange={handleFileChange}
                 className="w-full px-3 mt-2 py-2 rounded-md border border-gray-300 mb-3 focus:outline-none focus:border-blue-500 bg-opacity-10"
               />
-              {previewUrl && (
+              {/* {previewUrl && (
                 <img
                   src={previewUrl}
                   className="  w-[200px] h-[200px] "
                   alt="Selected"
                 />
-              )}
+              )} */}
             </div>
             <div className=" flex flex-col gap-y-4 text-white text-lg font-semibold">
               <button type="submit" className=" bg-blue-600 p-3 rounded-xl">
